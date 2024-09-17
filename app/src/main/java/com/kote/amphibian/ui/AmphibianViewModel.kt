@@ -30,7 +30,7 @@ class AmphibianViewModel(private val amphibianRepository: AmphibianRepository) :
         getAmphibiansInfo()
     }
 
-    private fun getAmphibiansInfo() {
+    fun getAmphibiansInfo() {
         viewModelScope.launch {
             amphibianUIState = try {
                 AmphibianUiState.Success(amphibianRepository.getAmphibians())
